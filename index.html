@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Project 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/vue-agile@1.1.3/dist/VueAgile.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div id="app">
+        <h1>The Crucible Tweets</h1>
+        <template>
+            <agile>
+                <div class="Slide" v-for="Tweet in Tweets">
+                    <div class="TweetSlide">
+                        <div class="Avatar" :style="'background-image: url(' + Characters[Tweet.user].image + ');'"></div>
+                        <div style="display: flex; flex-direction: column;">
+                            <div class="InfoBar">
+                                <span class="name">{{Characters[Tweet.user].name}}</span>
+                                <span class="username">{{Characters[Tweet.user].username}}</span>
+                            </div>
+                            <div class="Tweet" v-html="Tweet.tweet"></div>
+                        </div>
+                    </div>
+                </div>
+            </agile>
+        </template>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-agile@1.1.3/dist/VueAgile.umd.min.js"></script>
+
+    <script>
+        var Characters = {
+            "elizabeth-proctor": {
+                name: "Elizabeth Proctor",
+                username: "@Elizabeth",
+                image: "./images/elizabeth-proctor.jpg"
+            }, 
+            "john-proctor": {
+                name: "John Proctor", 
+                username: "@John",
+                image: "./images/john-proctor.jpg"
+            }, 
+            "abigail-williams": {
+                name: "Abigail Williams",
+                username: "@Abigail", 
+                image: "./images/abigail-williams.jpg"
+            },
+            "rebecca-nurse": {
+                name: "Rebecca Nurse",
+                username: "@Rebecca", 
+                image: "./images/rebecca-nurse.jpg"
+            },
+            "giles-corey": {
+                name: "Giles Corey",
+                username: "@Giles", 
+                image: "./images/giles-corey.jpg"
+            } 
+        };
+
+        var Tweets = [
+            {
+                user: "elizabeth-proctor",
+                tweet: "<b>@John</b> you were alone with her... why, then, it is not as you told me...  do as you wish then."
+            },
+            {
+                user: "rebecca-nurse",
+                tweet: "I think I'll go then. I am too old for this."
+            },
+            {
+                user: "abigail-williams",
+                tweet: "<b>@John</b> I will not, I cannot! You loved me John Proctor, and whatever sin it is, you love me yet! John, pity me, pity me!"
+            },
+            {
+                user: "john-proctor",
+                tweet: "<b>@Mary</b> we are only what we always were, but naked now. Aye, naked! And the wind, God's icy wind, will blow!"
+            }, 
+            {
+                user: "elizabeth-proctor",
+                tweet: "He have his goodness now. God forbid I take it from him!"
+            },
+            {
+                user: "giles-corey",
+                tweet: "More weight!"
+            }, 
+            {
+                user: "john-proctor",
+                tweet: "<b>@Danforth</b> Because it is my name! Because I cannot have another in my life! Because I lie and sign myself to lies! Because I am not worth the dust on the feet of them that hang! How may I live without my name? I have given you my soul; leave me my name!"
+            }, 
+        ];
+
+        Vue.use(VueAgile);
+
+        var app = new Vue({
+            el: '#app',
+            components: {
+                agile: VueAgile,
+            },
+            data: {
+                Characters: Characters,
+                Tweets: Tweets
+            }
+        });
+    </script>
+</body>
+</html>

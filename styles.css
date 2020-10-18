@@ -1,0 +1,159 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-family: "Kufam", Arial, Helvetica, sans-serif;
+  color: #fff;
+  background: #12171d;
+}
+
+#app {
+  width: 100vw;
+}
+
+.Slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 70vh;
+}
+
+h1 {
+  margin: 40px 0 0;
+  font-style: italic;
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+  text-shadow: 0px 2px 20px rgba(0, 0, 0, 0.4), 0px 4px 6px rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.TweetSlide {
+  display: -ms-grid;
+  display: grid;
+  position: relative;
+  -ms-grid-columns: 80px auto;
+      grid-template-columns: 80px auto;
+  grid-gap: 20px;
+  gap: 20px;
+  width: 35vw;
+  max-height: 65vh;
+  padding: 20px;
+  margin: auto;
+  border: 3px solid rgba(40, 56, 79, 0.25);
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.75);
+  background: #18202b;
+}
+
+.TweetSlide .Avatar {
+  width: 80px;
+  height: 80px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 3px solid rgba(40, 56, 79, 0.5);
+  border-radius: 50%;
+  background-size: cover;
+  background-color: #fff;
+}
+
+.Tweet {
+  font-size: 22px;
+  overflow: auto;
+}
+
+.Tweet::-webkit-scrollbar {
+  width: 10px;
+}
+
+.Tweet::-webkit-scrollbar-track {
+  background: #28384f;
+}
+
+.Tweet::-webkit-scrollbar-thumb {
+  background: #6091d6;
+  -webkit-transition: background 0.15s ease-in-out;
+  transition: background 0.15s ease-in-out;
+}
+
+.Tweet::-webkit-scrollbar-thumb:hover {
+  background: #89ade0;
+}
+
+.Tweet b {
+  cursor: pointer;
+  font-weight: 700;
+  color: #6091d6;
+}
+
+.InfoBar {
+  margin-bottom: 10px;
+  font-size: 1.075rem;
+}
+
+.InfoBar span {
+  margin-right: 5px;
+}
+
+.InfoBar .name {
+  font-weight: 700;
+}
+
+.InfoBar .username {
+  opacity: 0.6;
+}
+
+.agile {
+  width: 80vw;
+  margin: auto;
+}
+
+.agile__actions {
+  margin-top: -1.25rem;
+}
+
+.agile__nav-button {
+  background: transparent;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 24px;
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+}
+
+.agile__nav-button:hover {
+  color: #888;
+}
+
+.agile__dot {
+  margin: 0 10px;
+}
+
+.agile__dot button {
+  cursor: pointer;
+  background-color: #eee;
+  border: none;
+  border-radius: 50%;
+  display: block;
+  height: 10px;
+  font-size: 0;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+  width: 10px;
+}
+
+.agile__dot--current button, .agile__dot:hover button {
+  background-color: #888;
+}
+
+@media only screen and (max-width: 1100px) {
+  .TweetSlide {
+    width: 60vw;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
